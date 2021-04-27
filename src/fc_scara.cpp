@@ -5,7 +5,7 @@ fc_scara* fc_scara_init (unsigned int thickness, unsigned int length, unsigned i
     /*
         maybe you should check that the svg fle is of the correct dimensions, you can calculate the dimensions of the svg file 
     */
-    if (thickness <= 0 || length <= 0 || radius <= 0){
+    if (thickness <= 0 || length <= 0 || radius <= 0 || length >= 300){
         return NULL;
     }
     else if (q2 == 0){
