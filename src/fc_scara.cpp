@@ -1,50 +1,88 @@
 #include "fc_scara.h"
 
+bool is_number(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
+
 int* fc_ask_parameters(int p[7]){
 
     cout << "Enter a value for each parameter: " << endl;
-
+    string inputValue;
+    
+    do {
     cout << "thickness: ";
-    cin >> p[0];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[0] = stoi(inputValue);
     
     if (p[0] <= 0){
         return NULL;
     }
     cout << endl;
 
+    do {
     cout << "length: ";
-    cin >> p[1];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[1] = stoi(inputValue);
 
     if (4*p[0] >= p[1]|| p[1] <= 0 || p[1] > 200){
         return NULL;
     }
     cout << endl;
 
+    do {
     cout << "radius: ";
-    cin >> p[2];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[2] = stoi(inputValue);
 
     if (p[2] <= 0 || 2*p[2] > p[0]){
         return NULL;
     }
     cout << endl;
 
+    do {
     cout << "q1: ";
-    cin >> p[3];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[3] = stoi(inputValue);
+    
     cout << endl;
 
+    do {
     cout << "q2: ";
-    cin >> p[4];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[4] = stoi(inputValue);
+    
     if (p[4] == 180){
         return  NULL;   
     }
     cout << endl;
 
+    do {
     cout << "x: ";
-    cin >> p[5];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[5] = stoi(inputValue);
     cout << endl;
 
+    do {
     cout << "y: ";
-    cin >> p[6];
+    cin >> inputValue;
+    } while(!is_number(inputValue));
+    
+    p[6] = stoi(inputValue);
     cout << endl;
 
     //definition of the array of parameters
@@ -362,6 +400,3 @@ string fc_scara_save(fc_scara* scara){
     return fc_save(s);
 
 }
-
-
-

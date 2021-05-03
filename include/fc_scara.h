@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <math.h>
 
 #include "fc_svg.h"
@@ -165,5 +166,12 @@ string fc_scara_save(fc_scara* scara);
  * @return int* pointer to an array of integers
 */
 int* fc_ask_parameters(int p[7]);
+
+/**
+ * Checks if input string is a number
+ * @param  input string
+ * @return boolean to identify whether it is a number or not
+*/
+bool is_number(const std::string& s);
 
 #endif
