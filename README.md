@@ -100,11 +100,8 @@ It has been used [SemVer](http://semver.org/) for versioning. For the versions a
 
 * **Federico Corso** - [FedericoCorso](https://github.com/FedericoCorso)
 
-See also the list of [contributors]() who participated in this project. (to update)
+See also the list of [contributors](https://github.com/FedericoCorso/homework1/graphs/contributors) who participated in this project.
 
-
-## Acknowledgments
-(to update)
 
 
 

@@ -166,6 +166,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/fc_machine.o: src/fc_machine.cpp.o
+.PHONY : src/fc_machine.o
+
+# target to build an object file
+src/fc_machine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o
+.PHONY : src/fc_machine.cpp.o
+
+src/fc_machine.i: src/fc_machine.cpp.i
+.PHONY : src/fc_machine.i
+
+# target to preprocess a source file
+src/fc_machine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_machine.cpp.i
+.PHONY : src/fc_machine.cpp.i
+
+src/fc_machine.s: src/fc_machine.cpp.s
+.PHONY : src/fc_machine.s
+
+# target to generate assembly for a file
+src/fc_machine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_machine.cpp.s
+.PHONY : src/fc_machine.cpp.s
+
 src/fc_scara.o: src/fc_scara.cpp.o
 .PHONY : src/fc_scara.o
 
@@ -214,6 +238,54 @@ src/fc_svg.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_svg.cpp.s
 .PHONY : src/fc_svg.cpp.s
 
+src/pistone.o: src/pistone.cpp.o
+.PHONY : src/pistone.o
+
+# target to build an object file
+src/pistone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/pistone.cpp.o
+.PHONY : src/pistone.cpp.o
+
+src/pistone.i: src/pistone.cpp.i
+.PHONY : src/pistone.i
+
+# target to preprocess a source file
+src/pistone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/pistone.cpp.i
+.PHONY : src/pistone.cpp.i
+
+src/pistone.s: src/pistone.cpp.s
+.PHONY : src/pistone.s
+
+# target to generate assembly for a file
+src/pistone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/pistone.cpp.s
+.PHONY : src/pistone.cpp.s
+
+src/svg.o: src/svg.cpp.o
+.PHONY : src/svg.o
+
+# target to build an object file
+src/svg.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.o
+.PHONY : src/svg.cpp.o
+
+src/svg.i: src/svg.cpp.i
+.PHONY : src/svg.i
+
+# target to preprocess a source file
+src/svg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.i
+.PHONY : src/svg.cpp.i
+
+src/svg.s: src/svg.cpp.s
+.PHONY : src/svg.s
+
+# target to generate assembly for a file
+src/svg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.s
+.PHONY : src/svg.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,12 +299,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/fc_machine.o"
+	@echo "... src/fc_machine.i"
+	@echo "... src/fc_machine.s"
 	@echo "... src/fc_scara.o"
 	@echo "... src/fc_scara.i"
 	@echo "... src/fc_scara.s"
 	@echo "... src/fc_svg.o"
 	@echo "... src/fc_svg.i"
 	@echo "... src/fc_svg.s"
+	@echo "... src/pistone.o"
+	@echo "... src/pistone.i"
+	@echo "... src/pistone.s"
+	@echo "... src/svg.o"
+	@echo "... src/svg.i"
+	@echo "... src/svg.s"
 .PHONY : help
 
 

@@ -66,71 +66,62 @@ void fc_delete_robot(fc_scara* robot);
 /**
  * Change thickness of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_thickness value foir new thickness
- * @return value:
+ * @param thickness value foir new thickness
+ * @return int value:
  *     - 1 if constraints are violated
  *     - 0 if constraints are satisfied
 */
-int fc_set_thickness(fc_scara* robot);
-
+int fc_set_thickness(fc_scara* robot, string thickness);
 /**
  * Change length of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_length value for the new length
- * @return value:
- *     - 1 if constraints are violated
+ * @param length value for the new length
+ * @return int value:
+ *     - 1 if constraints are violated nor number is given
  *     - 0 if constraints are satisfied
 */
-int fc_set_length(fc_scara* robot);
+int fc_set_length(fc_scara* robot,string length);
 
 /**
  * Change radius parameter of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_radius value for the new radius
- * @return value:
- *     - 1 if constraints are violated
+ * @param radius value for the new radius
+ * @return int value:
+ *     - 1 if constraints are violated nor number is giver
  *     - 0 if constraints are satisfied
 */
-int fc_set_radius(fc_scara* robot);
+int fc_set_radius(fc_scara* robot,string radius);
 
 /**
  * Change q1 parameter of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_q1 value for the new q1
- * @return value:
- *     - 1 if constraints are violated
+ * @param q1 value for the new q1
+ * @return int value:
+ *     - 1 if constraints are violated nor number is given
  *     - 0 if constraints are satisfied
 */
-int fc_set_q1(fc_scara* robot);
+int fc_set_q1(fc_scara* robot, string q1);
 
 /**
  * Change q2 parameter of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_q1 value for the new q2
- * @return value:
+ * @param q2 value for the new q2
+ * @return int value:
  *     - 1 if constraints are violated
  *     - 0 if constraints are satisfied
 */
-int fc_set_q2(fc_scara* robot);
+int fc_set_q2(fc_scara* robot, string q2);
 
-/*
-    Change the position of the frame of an existing structure
-    @param pointer to an existing structure
-    @param new value 
-    @return value:
-        - 1 if constraints are violated
-        - 0 if constraints are satisfied
-*/
 /**
  * Change the origin parameter of an existing fc_scara structure
  * @param robot pointer to an existing fc_scara structure
- * @param new_x value for the new x
- * @param new_y value for the new y
- * @return value:
+ * @param x value for the new x
+ * @param y value for the new y
+ * @return int value:
  *     - 1 if constraints are violated
  *     - 0 if constraints are satisfied
 */
-int fc_set_frame(fc_scara* robot);
+int fc_set_frame(fc_scara* robot, string x, string y);
 
 /**
  * Create a string following svg formatting style 

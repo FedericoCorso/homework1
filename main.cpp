@@ -1,5 +1,8 @@
 #include "fc_scara.h"
 #include "fc_svg.h"
+#include "svg.h"
+#include "pistone.h"
+#include "fc_machine.h"
 
 using namespace std;
 
@@ -12,8 +15,8 @@ int main() {
 
     //commandline program to create a structure, load a structure from an existing file and save to a file a new structure
     char c; // choice parameter
-    string s; // string to store the svg string of the structure
-    string f; // string to store the name of the file
+    string s; // string to store the svg string of the structure or input from user
+    string f; // string to store the name of the file or to store input from user
     fc_scara* scara; // pointer to a structure
 
     // messages for the user
@@ -173,22 +176,44 @@ int main() {
             case '5': {
                 if(scara != NULL){
 
-                    cout << fc_set_thickness(scara);
+                    cout << "thickness: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << fc_set_thickness(scara,s);
                     cout << endl;
 
-                    cout << fc_set_length(scara);
+                    cout << "length: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << fc_set_length(scara,s);
+                    cout << endl;
+                    
+                    cout << "radius: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << fc_set_radius(scara,s);
                     cout << endl;
 
-                    cout << fc_set_radius(scara);
+                    cout << "q1: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << fc_set_q1(scara,s);
+                    cout << endl;
+                    
+                    cout << "q2: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << fc_set_q2(scara,s);
+                    cout << endl;
+                    
+                    cout << "x: ";
+                    cin >> s;
+                    cout << endl;
+                    cout << "y: ";
+                    cin >> f;
                     cout << endl;
 
-                    cout << fc_set_q1(scara);
-                    cout << endl;
-
-                    cout << fc_set_q2(scara);
-                    cout << endl;
-
-                    cout << fc_set_frame(scara);
+                    cout << fc_set_frame(scara,s,f);
                     cout << endl;
                     
                     cout << endl;

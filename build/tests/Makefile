@@ -130,6 +130,30 @@ catch2Test/fast:
 	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/build
 .PHONY : catch2Test/fast
 
+__/src/fc_machine.o: __/src/fc_machine.cpp.o
+.PHONY : __/src/fc_machine.o
+
+# target to build an object file
+__/src/fc_machine.cpp.o:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o
+.PHONY : __/src/fc_machine.cpp.o
+
+__/src/fc_machine.i: __/src/fc_machine.cpp.i
+.PHONY : __/src/fc_machine.i
+
+# target to preprocess a source file
+__/src/fc_machine.cpp.i:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.i
+.PHONY : __/src/fc_machine.cpp.i
+
+__/src/fc_machine.s: __/src/fc_machine.cpp.s
+.PHONY : __/src/fc_machine.s
+
+# target to generate assembly for a file
+__/src/fc_machine.cpp.s:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.s
+.PHONY : __/src/fc_machine.cpp.s
+
 __/src/fc_scara.o: __/src/fc_scara.cpp.o
 .PHONY : __/src/fc_scara.o
 
@@ -177,6 +201,54 @@ __/src/fc_svg.s: __/src/fc_svg.cpp.s
 __/src/fc_svg.cpp.s:
 	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.s
 .PHONY : __/src/fc_svg.cpp.s
+
+__/src/pistone.o: __/src/pistone.cpp.o
+.PHONY : __/src/pistone.o
+
+# target to build an object file
+__/src/pistone.cpp.o:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o
+.PHONY : __/src/pistone.cpp.o
+
+__/src/pistone.i: __/src/pistone.cpp.i
+.PHONY : __/src/pistone.i
+
+# target to preprocess a source file
+__/src/pistone.cpp.i:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.i
+.PHONY : __/src/pistone.cpp.i
+
+__/src/pistone.s: __/src/pistone.cpp.s
+.PHONY : __/src/pistone.s
+
+# target to generate assembly for a file
+__/src/pistone.cpp.s:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.s
+.PHONY : __/src/pistone.cpp.s
+
+__/src/svg.o: __/src/svg.cpp.o
+.PHONY : __/src/svg.o
+
+# target to build an object file
+__/src/svg.cpp.o:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o
+.PHONY : __/src/svg.cpp.o
+
+__/src/svg.i: __/src/svg.cpp.i
+.PHONY : __/src/svg.i
+
+# target to preprocess a source file
+__/src/svg.cpp.i:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.i
+.PHONY : __/src/svg.cpp.i
+
+__/src/svg.s: __/src/svg.cpp.s
+.PHONY : __/src/svg.s
+
+# target to generate assembly for a file
+__/src/svg.cpp.s:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.s
+.PHONY : __/src/svg.cpp.s
 
 catch2Main.o: catch2Main.cpp.o
 .PHONY : catch2Main.o
@@ -235,12 +307,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... catch2Test"
+	@echo "... __/src/fc_machine.o"
+	@echo "... __/src/fc_machine.i"
+	@echo "... __/src/fc_machine.s"
 	@echo "... __/src/fc_scara.o"
 	@echo "... __/src/fc_scara.i"
 	@echo "... __/src/fc_scara.s"
 	@echo "... __/src/fc_svg.o"
 	@echo "... __/src/fc_svg.i"
 	@echo "... __/src/fc_svg.s"
+	@echo "... __/src/pistone.o"
+	@echo "... __/src/pistone.i"
+	@echo "... __/src/pistone.s"
+	@echo "... __/src/svg.o"
+	@echo "... __/src/svg.i"
+	@echo "... __/src/svg.s"
 	@echo "... catch2Main.o"
 	@echo "... catch2Main.i"
 	@echo "... catch2Main.s"

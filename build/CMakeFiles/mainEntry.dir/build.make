@@ -111,11 +111,56 @@ CMakeFiles/mainEntry.dir/src/fc_svg.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainEntry.dir/src/fc_svg.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/src/fc_svg.cpp -o CMakeFiles/mainEntry.dir/src/fc_svg.cpp.s
 
+CMakeFiles/mainEntry.dir/src/pistone.cpp.o: CMakeFiles/mainEntry.dir/flags.make
+CMakeFiles/mainEntry.dir/src/pistone.cpp.o: ../src/pistone.cpp
+CMakeFiles/mainEntry.dir/src/pistone.cpp.o: CMakeFiles/mainEntry.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mainEntry.dir/src/pistone.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mainEntry.dir/src/pistone.cpp.o -MF CMakeFiles/mainEntry.dir/src/pistone.cpp.o.d -o CMakeFiles/mainEntry.dir/src/pistone.cpp.o -c /Users/federicocorso/tpa/homework1/src/pistone.cpp
+
+CMakeFiles/mainEntry.dir/src/pistone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mainEntry.dir/src/pistone.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/federicocorso/tpa/homework1/src/pistone.cpp > CMakeFiles/mainEntry.dir/src/pistone.cpp.i
+
+CMakeFiles/mainEntry.dir/src/pistone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainEntry.dir/src/pistone.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/src/pistone.cpp -o CMakeFiles/mainEntry.dir/src/pistone.cpp.s
+
+CMakeFiles/mainEntry.dir/src/svg.cpp.o: CMakeFiles/mainEntry.dir/flags.make
+CMakeFiles/mainEntry.dir/src/svg.cpp.o: ../src/svg.cpp
+CMakeFiles/mainEntry.dir/src/svg.cpp.o: CMakeFiles/mainEntry.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mainEntry.dir/src/svg.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mainEntry.dir/src/svg.cpp.o -MF CMakeFiles/mainEntry.dir/src/svg.cpp.o.d -o CMakeFiles/mainEntry.dir/src/svg.cpp.o -c /Users/federicocorso/tpa/homework1/src/svg.cpp
+
+CMakeFiles/mainEntry.dir/src/svg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mainEntry.dir/src/svg.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/federicocorso/tpa/homework1/src/svg.cpp > CMakeFiles/mainEntry.dir/src/svg.cpp.i
+
+CMakeFiles/mainEntry.dir/src/svg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainEntry.dir/src/svg.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/src/svg.cpp -o CMakeFiles/mainEntry.dir/src/svg.cpp.s
+
+CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o: CMakeFiles/mainEntry.dir/flags.make
+CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o: ../src/fc_machine.cpp
+CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o: CMakeFiles/mainEntry.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o -MF CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o.d -o CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o -c /Users/federicocorso/tpa/homework1/src/fc_machine.cpp
+
+CMakeFiles/mainEntry.dir/src/fc_machine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mainEntry.dir/src/fc_machine.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/federicocorso/tpa/homework1/src/fc_machine.cpp > CMakeFiles/mainEntry.dir/src/fc_machine.cpp.i
+
+CMakeFiles/mainEntry.dir/src/fc_machine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mainEntry.dir/src/fc_machine.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/src/fc_machine.cpp -o CMakeFiles/mainEntry.dir/src/fc_machine.cpp.s
+
 # Object files for target mainEntry
 mainEntry_OBJECTS = \
 "CMakeFiles/mainEntry.dir/main.cpp.o" \
 "CMakeFiles/mainEntry.dir/src/fc_scara.cpp.o" \
-"CMakeFiles/mainEntry.dir/src/fc_svg.cpp.o"
+"CMakeFiles/mainEntry.dir/src/fc_svg.cpp.o" \
+"CMakeFiles/mainEntry.dir/src/pistone.cpp.o" \
+"CMakeFiles/mainEntry.dir/src/svg.cpp.o" \
+"CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o"
 
 # External object files for target mainEntry
 mainEntry_EXTERNAL_OBJECTS =
@@ -123,9 +168,12 @@ mainEntry_EXTERNAL_OBJECTS =
 mainEntry: CMakeFiles/mainEntry.dir/main.cpp.o
 mainEntry: CMakeFiles/mainEntry.dir/src/fc_scara.cpp.o
 mainEntry: CMakeFiles/mainEntry.dir/src/fc_svg.cpp.o
+mainEntry: CMakeFiles/mainEntry.dir/src/pistone.cpp.o
+mainEntry: CMakeFiles/mainEntry.dir/src/svg.cpp.o
+mainEntry: CMakeFiles/mainEntry.dir/src/fc_machine.cpp.o
 mainEntry: CMakeFiles/mainEntry.dir/build.make
 mainEntry: CMakeFiles/mainEntry.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable mainEntry"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable mainEntry"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mainEntry.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

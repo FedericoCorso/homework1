@@ -93,7 +93,7 @@ int* fc_ask_parameters(int p[7]){
 
 fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x,int y){
     
-    if (thickness <= 0){
+    if (thickness <= 0 || thickness > 50){
         return NULL;
     }
     else if (4*thickness >= length|| length <= 0 || length > 200){
@@ -102,7 +102,10 @@ fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x
     else if (radius <= 0 || 2*radius > thickness){
         return NULL;
     }
-    else if (q2 == 180){
+    else if(q1 > 360){
+        return NULL;
+    }
+    else if (q2 == 180 || q2 > 360){
         return  NULL;   
     }
     else{
@@ -123,7 +126,6 @@ fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x
         robot -> svg_width = (length*2);
 
         return robot; // returning the pointer to the created structure
-
     }
 }
 
@@ -159,145 +161,100 @@ string fc_scara_to_svg(fc_scara* scara){
     return scara_svg;
    }
 
-   int fc_set_thickness(fc_scara* robot){
+   int fc_set_thickness(fc_scara* robot, string thickness){
 
-       //set thickness
-        int new_thickness;
-        cout << "thickness: ";
-        cin >> new_thickness;
-        cout << endl;
-                    
-       if (new_thickness <= 0|| 4*new_thickness >= robot->length|| new_thickness <= (robot -> radius)*2){
-           return 1;
-       };
-       robot -> thickness = new_thickness;
-       return 0;
-   }
-
-   int fc_set_length(fc_scara* robot){
-
-        int new_length;
-        cout << "length: ";
-        cin >> new_length;
-        cout << endl;
-
-       if (new_length > 200 || new_length <= 0){
-           return 1;
-       };
-
-       robot -> length = new_length;
-       return 0;
-   }
-
-   int fc_set_radius(fc_scara* robot){
-
-        int new_radius;
-        cout << "radius: ";
-        cin >> new_radius;
-        cout << endl;
-
-       if (2 * new_radius > (robot -> thickness) || new_radius <= 0){
-           return 1;
-       };
-
-       robot-> radius = new_radius;
-       return 0;
-   }
-
-   int fc_set_q1(fc_scara* robot){
-        
-        int new_q1;
-        cout << "q1: ";
-        cin >> new_q1;
-        cout << endl;
-
-       robot-> q1 = new_q1;
-       return 0;
-   }
-
-   int fc_set_q2(fc_scara* robot){
-
-        int new_q2;
-        cout << "q2: ";
-        cin >> new_q2;
-        cout << endl;
-
-       if (new_q2 == 180){
+       if(!is_number(thickness)){
            return 1;
        }
-       robot-> q2 = new_q2;
-       return 0;
+       else{
+            int new_thickness = stoi(thickness);
+
+            if(new_thickness <= 0|| 4*new_thickness >= robot->length|| new_thickness <= (robot -> radius)*2){
+                return 1;
+            }
+            robot -> thickness = new_thickness;
+            return 0;
+       }
    }
 
-
-
-   int fc_set_frame(fc_scara* robot){
-       int new_x;
-       int new_y;
-
-       cout << "x: ";
-       cin >> new_x;
-       cout << endl;
-
-       cout << "y: ";
-       cin >> new_y;
-       cout << endl;
+   int fc_set_length(fc_scara* robot,string length){
        
-       if(new_x < 0 || new_y < 0){
+       if(!is_number(length)){
            return 1;
-       };
+       }
+       else{
+           int new_length = stoi(length);
 
-       robot -> origin.x = new_x;
-       robot -> origin.y = new_y;
-
-       return 0;
+           if (new_length > 200 || new_length <= 0 || new_length <= (robot->thickness)*4){
+           return 1;
+           }
+           robot -> length = new_length;
+           return 0;
+       }
    }
 
-   
-/*
-   fc_scara* fc_read_svg_device(string filename){
-    // definition of an object called svg
-    ifstream svg(filename + ".svg");
-    
+   int fc_set_radius(fc_scara* robot,string radius){
 
-    
-    if (!svg.good()) {
-    cout << "from_svg: File does not exist" << endl;
-    return NULL;
-    }
-    
-    // definition of a string in which 
-    string line = "";
-    
-    // use isopen method in if because it returns a bool
-    if(svg.is_open()){
-        //using a while loop to iterate 
-        while(getline(svg, line)){
-            size_t index = 0;
+       if(!is_number(radius)){
+           return 1;
+       }
+       else{
+           int new_radius=stoi(radius);
+           if (2 * new_radius > (robot -> thickness) || new_radius <= 0){
+               return 1;
+            }
+            robot-> radius = new_radius;
+            return 0;
+       }
+   }
 
-            if 
+   int fc_set_q1(fc_scara* robot, string q1){
+       if(!is_number(q1)){
+           return 1;
+       }
+       else{
+           int new_q1 = stoi(q1);
+           if(new_q1 > 360){
+               return 1;
+           }
+           robot-> q1 = new_q1;
+           return 0;
+       }
+   }
 
-        }
+   int fc_set_q2(fc_scara* robot, string q2){
+       if(!is_number(q2)){
+           return 1;
+       }
+       else{
+           int new_q2=stoi(q2);
+           if (new_q2 == 180){
+                return 1;
+            }
+            robot-> q2 = new_q2;
+            return 0;
+       }
+   }
 
-    }
-
-    fc_scara* fc_scara_init
 
 
-    ifstream t(filename);
+   int fc_set_frame(fc_scara* robot, string x, string y){
+       if(!is_number(x)|| !is_number(y)){
+           return 1;
+       }
+       else{
+           int new_x = stoi(x);
+           int new_y = stoi(y);
+           if(new_x < 0 || new_y < 0){
+               return 1;
+           }
+           robot -> origin.x = new_x;
+           robot -> origin.y = new_y;
+           return 0;
+       }
+   }
 
-    stringstream buffer;
-    
-    buffer << t.rdbuf();
-    
-    string s = buffer.str();
-    
-    cout << "the file " << filename << "has been read" << endl;
-    
-    return s;
 
-}
-*/
     fc_scara* fc_svg_to_scara(string content){
     /*
         this function could be implemented in a better way by intriducing some kind of iteration
