@@ -274,6 +274,30 @@ catch2Main.cpp.s:
 	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/catch2Main.cpp.s
 .PHONY : catch2Main.cpp.s
 
+testfc_machine.o: testfc_machine.cpp.o
+.PHONY : testfc_machine.o
+
+# target to build an object file
+testfc_machine.cpp.o:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o
+.PHONY : testfc_machine.cpp.o
+
+testfc_machine.i: testfc_machine.cpp.i
+.PHONY : testfc_machine.i
+
+# target to preprocess a source file
+testfc_machine.cpp.i:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.i
+.PHONY : testfc_machine.cpp.i
+
+testfc_machine.s: testfc_machine.cpp.s
+.PHONY : testfc_machine.s
+
+# target to generate assembly for a file
+testfc_machine.cpp.s:
+	cd /Users/federicocorso/tpa/homework1/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.s
+.PHONY : testfc_machine.cpp.s
+
 testfc_scara.o: testfc_scara.cpp.o
 .PHONY : testfc_scara.o
 
@@ -325,6 +349,9 @@ help:
 	@echo "... catch2Main.o"
 	@echo "... catch2Main.i"
 	@echo "... catch2Main.s"
+	@echo "... testfc_machine.o"
+	@echo "... testfc_machine.i"
+	@echo "... testfc_machine.s"
 	@echo "... testfc_scara.o"
 	@echo "... testfc_scara.i"
 	@echo "... testfc_scara.s"

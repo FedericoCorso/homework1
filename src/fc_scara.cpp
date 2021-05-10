@@ -129,14 +129,20 @@ fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x
     }
 }
 
-string fc_scara_to_svg(fc_scara* scara){
+string fc_svg_scara_init(fc_scara* scara, string device){
+    //definition of the string which will contain the svg representation
+    string s;
+
+    s += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?> \n";
+    s += "<svg xmlns=\"http://www.w3.org/2000/svg\" width = \"" + to_string(scara -> svg_width + scara->origin.x) + "\" height = \"" + to_string(scara -> svg_width+scara->origin.y) + "\">\n";
     
+    s += device;    
+    return s;
+}
+
+string fc_scara_to_svg(fc_scara* scara){
        
     string scara_svg;
-    //declaration of xml 
-    scara_svg += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?> \n";
-    //svg namespace
-    scara_svg += "<svg xmlns=\"http://www.w3.org/2000/svg\" width = \"" + to_string(scara -> svg_width + scara->origin.x) + "\" height = \"" + to_string(scara -> svg_width+scara->origin.y) + "\">\n";
     // creating a group of images
     scara_svg += "<g transform = \"rotate(" + to_string(scara->q1) + " " + to_string(scara->origin.x) + " " + to_string(scara->origin.y) + ") translate("+ to_string(scara->origin.x - scara->radius) + "," + to_string(scara->origin.y - (scara->thickness)/2)+")\" ";   
     // rectangle style
@@ -154,9 +160,10 @@ string fc_scara_to_svg(fc_scara* scara){
     //first revolute joint
     scara_svg += "<circle cx= \"" + to_string(scara->origin.x) + "\" cy= \"" + to_string(scara->origin.y) + "\" r= \"" + to_string(scara->radius) + "\" stroke= \" black \" stroke-width=\"3\" fill=\" white \" /> \n";
     
-
+    /*
     //end svg
     scara_svg.append("</svg>\n");
+    */
 
     return scara_svg;
    }
@@ -352,8 +359,10 @@ fc_scara* fc_load_from_file(string filename){
 
 string fc_scara_save(fc_scara* scara){
 
-    string s = fc_scara_to_svg(scara);
-
+    string device = fc_scara_to_svg(scara);
+    string s = fc_svg_scara_init(scara, device);
+    
+    s.append("</svg>\n");
+    
     return fc_save(s);
-
 }

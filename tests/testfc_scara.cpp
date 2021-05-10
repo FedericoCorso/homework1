@@ -23,6 +23,7 @@ SCENARIO("initialization with non positive values, non integer values nor number
                 REQUIRE(scara == NULL);
             }
         }
+        fc_delete_robot(scara);
     }
 }
 
@@ -30,7 +31,14 @@ SCENARIO("User changing parameters of existing struct" ,"[fc_set_functions]"){
     
     GIVEN("An existing structure"){
         fc_scara* scara = fc_scara_init(10,100,5,30,45,10,30);
-        THEN("the structure exists"){
+        THEN("the structure exists and init is correct"){
+            REQUIRE(scara->thickness == 10);
+            REQUIRE(scara->length == 100);
+            REQUIRE(scara->radius == 5);
+            REQUIRE(scara->q1 == 30);
+            REQUIRE(scara->q2 == 45);
+            REQUIRE(scara->origin.x == 10);
+            REQUIRE(scara->origin.y == 30);
             REQUIRE(scara != NULL);
         }
         WHEN("thickness is changed"){
@@ -66,5 +74,6 @@ SCENARIO("User changing parameters of existing struct" ,"[fc_set_functions]"){
                 REQUIRE(fc_set_length(scara, "100")==0);
             }
         }
+        fc_delete_robot(scara);
     }
 }

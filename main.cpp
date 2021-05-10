@@ -34,7 +34,8 @@ int main() {
         cout << "Type \"4\" to save the structure to a new file"<< endl;
         cout << "Type \"5\" to edit an existing structure" << endl;
         cout << "Type \"6\" to delete the created structure" << endl;
-        cout << "Type \"7\" to end the execution  of the program" << endl;
+        cout << "Type \"7\" to create a machine" << endl;
+        cout << "Type \"8\" to end the execution  of the program" << endl;
         cout << endl;
 
         // store the input 
@@ -245,6 +246,36 @@ int main() {
                     
             }
             case '7':{
+                int x;
+                int y;
+                int length;
+                int q1;
+                int base;
+
+                cout << "x: " << endl;
+                cin >> x;
+                cout <<"y: " << endl;
+                cin >> y;
+                cout << "length: " << endl;
+                cin >> length;
+                cout << "q1: " << endl; 
+                cin >> q1;
+                cout << "base: " << endl;
+                cin >> base;
+                
+                fc_machine* machine = fc_machine_init(x,y,length,q1,base);
+
+                cout << machine ->scarart << endl;
+                cout << machine -> scaralt << endl;
+                
+                string s = fc_machine_to_svg(machine);
+                cout << s << endl;
+
+                fc_delete_machine(machine);
+                break;
+
+            }
+            case '8':{
                 cout << "end of the program" << endl;
                 //delete memory if used
                 fc_delete_robot(scara);

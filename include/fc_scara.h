@@ -124,6 +124,13 @@ int fc_set_q2(fc_scara* robot, string q2);
 int fc_set_frame(fc_scara* robot, string x, string y);
 
 /**
+ * Function to set dimensions of svg file
+ * @param device string with svg representation of scara robot
+ * @return string with svg representation
+*/
+string fc_svg_scara_init(fc_scara* scara, string device);
+
+/**
  * Create a string following svg formatting style 
  * @param scara pointer to fc_scara structure to export
  * @return string with svg representation

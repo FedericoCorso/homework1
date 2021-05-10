@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/catch2Test.dir/__/src/svg.cpp.o.d"
   "CMakeFiles/catch2Test.dir/catch2Main.cpp.o"
   "CMakeFiles/catch2Test.dir/catch2Main.cpp.o.d"
+  "CMakeFiles/catch2Test.dir/testfc_machine.cpp.o"
+  "CMakeFiles/catch2Test.dir/testfc_machine.cpp.o.d"
   "CMakeFiles/catch2Test.dir/testfc_scara.cpp.o"
   "CMakeFiles/catch2Test.dir/testfc_scara.cpp.o.d"
   "catch2Test"

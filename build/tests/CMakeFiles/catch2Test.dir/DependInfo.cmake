@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/federicocorso/tpa/homework1/src/pistone.cpp" "tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o" "gcc" "tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o.d"
   "/Users/federicocorso/tpa/homework1/src/svg.cpp" "tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o" "gcc" "tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o.d"
   "/Users/federicocorso/tpa/homework1/tests/catch2Main.cpp" "tests/CMakeFiles/catch2Test.dir/catch2Main.cpp.o" "gcc" "tests/CMakeFiles/catch2Test.dir/catch2Main.cpp.o.d"
+  "/Users/federicocorso/tpa/homework1/tests/testfc_machine.cpp" "tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o" "gcc" "tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o.d"
   "/Users/federicocorso/tpa/homework1/tests/testfc_scara.cpp" "tests/CMakeFiles/catch2Test.dir/testfc_scara.cpp.o" "gcc" "tests/CMakeFiles/catch2Test.dir/testfc_scara.cpp.o.d"
   )
 

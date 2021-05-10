@@ -97,10 +97,24 @@ tests/CMakeFiles/catch2Test.dir/testfc_scara.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/catch2Test.dir/testfc_scara.cpp.s"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/tests/testfc_scara.cpp -o CMakeFiles/catch2Test.dir/testfc_scara.cpp.s
 
+tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
+tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o: ../tests/testfc_machine.cpp
+tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o"
+	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o -MF CMakeFiles/catch2Test.dir/testfc_machine.cpp.o.d -o CMakeFiles/catch2Test.dir/testfc_machine.cpp.o -c /Users/federicocorso/tpa/homework1/tests/testfc_machine.cpp
+
+tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/catch2Test.dir/testfc_machine.cpp.i"
+	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/federicocorso/tpa/homework1/tests/testfc_machine.cpp > CMakeFiles/catch2Test.dir/testfc_machine.cpp.i
+
+tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/catch2Test.dir/testfc_machine.cpp.s"
+	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/federicocorso/tpa/homework1/tests/testfc_machine.cpp -o CMakeFiles/catch2Test.dir/testfc_machine.cpp.s
+
 tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
 tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o: ../src/fc_scara.cpp
 tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o -MF CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o.d -o CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o -c /Users/federicocorso/tpa/homework1/src/fc_scara.cpp
 
 tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.i: cmake_force
@@ -114,7 +128,7 @@ tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.s: cmake_force
 tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
 tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o: ../src/fc_svg.cpp
 tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o -MF CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o.d -o CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o -c /Users/federicocorso/tpa/homework1/src/fc_svg.cpp
 
 tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.i: cmake_force
@@ -128,7 +142,7 @@ tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.s: cmake_force
 tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
 tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o: ../src/pistone.cpp
 tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o -MF CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o.d -o CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o -c /Users/federicocorso/tpa/homework1/src/pistone.cpp
 
 tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.i: cmake_force
@@ -142,7 +156,7 @@ tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.s: cmake_force
 tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
 tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o: ../src/svg.cpp
 tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o -MF CMakeFiles/catch2Test.dir/__/src/svg.cpp.o.d -o CMakeFiles/catch2Test.dir/__/src/svg.cpp.o -c /Users/federicocorso/tpa/homework1/src/svg.cpp
 
 tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.i: cmake_force
@@ -156,7 +170,7 @@ tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.s: cmake_force
 tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o: tests/CMakeFiles/catch2Test.dir/flags.make
 tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o: ../src/fc_machine.cpp
 tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o: tests/CMakeFiles/catch2Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o"
 	cd /Users/federicocorso/tpa/homework1/build/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o -MF CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o.d -o CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o -c /Users/federicocorso/tpa/homework1/src/fc_machine.cpp
 
 tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.i: cmake_force
@@ -171,6 +185,7 @@ tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.s: cmake_force
 catch2Test_OBJECTS = \
 "CMakeFiles/catch2Test.dir/catch2Main.cpp.o" \
 "CMakeFiles/catch2Test.dir/testfc_scara.cpp.o" \
+"CMakeFiles/catch2Test.dir/testfc_machine.cpp.o" \
 "CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o" \
 "CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o" \
 "CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o" \
@@ -182,6 +197,7 @@ catch2Test_EXTERNAL_OBJECTS =
 
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/catch2Main.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/testfc_scara.cpp.o
+tests/catch2Test: tests/CMakeFiles/catch2Test.dir/testfc_machine.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/__/src/fc_svg.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o
@@ -189,7 +205,7 @@ tests/catch2Test: tests/CMakeFiles/catch2Test.dir/__/src/svg.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/__/src/fc_machine.cpp.o
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/build.make
 tests/catch2Test: tests/CMakeFiles/catch2Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable catch2Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/federicocorso/tpa/homework1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable catch2Test"
 	cd /Users/federicocorso/tpa/homework1/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/catch2Test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
