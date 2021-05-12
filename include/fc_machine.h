@@ -14,7 +14,7 @@
 struct fc_machine{
     fc_scara* scarart; // right arm
     fc_scara* scaralt; //left arm
-    Pistone* pistone; 
+    Pistone* pistone;
 };
 
 /**
@@ -26,7 +26,7 @@ struct fc_machine{
  * @param base unsigned int base of the piston
  * @return fc_machine ,pointer to a struct of type fc_machine
 */
-fc_machine* fc_machine_init(int x, int y, int length, int q1, unsigned int base);
+fc_machine* fc_machine_init(int x, int y, int length, int q1, int base);
 
 /**
  * Function to free dynamic memory allocated for the machine
@@ -41,6 +41,27 @@ void fc_delete_machine(fc_machine* machine);
  * @return string with svg representation of the machine
 */
 string fc_machine_to_svg(fc_machine* machine);
+
+/**
+ * function to set coordinates of the origin of the paantograph
+ * @param machine pointer to an existing structure
+ * @param x string with x coordinate
+ * @param y string with y coordinate
+ * @return int value:
+ *  - 1 if constraints are violated nor number is given or if the pointer is NULL (no existing structure)
+ *  - 0 if constraints are satisfied
+*/
+int fc_set_origin(fc_machine* machine, string x, string y);
+
+/**
+ * Function to change q1 angle hence the height reached by the machine
+ * @param machine pointer to an existing structure
+ * @param q1 string with the new q1 value
+ * @return int value:
+ *  - 1 if constraints are violated nor number is given or if the pointer is NULL (no existing structure)
+ *  - 0 if constraints are satisfied
+*/
+int fc_set_q1(fc_machine* machine, string q1);
 
 
 #endif

@@ -39,7 +39,7 @@ struct Pistone {
  * 
  *  @return struttura contenente i dati del pistone
  */
-Pistone* pist_init(unsigned int base, unsigned int x, unsigned int y);
+Pistone* pist_init( int base, int x,  int y);
 
 /** Funzione che crea una stringa svg contenente l'immagine del pisone 
  * 

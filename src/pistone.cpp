@@ -5,28 +5,28 @@
 
 using namespace std;
 
-Pistone* pist_init(unsigned int base, unsigned int x, unsigned int y){
-
+Pistone* pist_init(int base, int x, int y){
+    
     // controllo sui valori da inserire nella struttura del pistone
     if (base <= 0){
-        throw invalid_argument("La base non puo' avere un valore negativo!");
+        return NULL;
     } else if (base>300) {
-        throw invalid_argument("Il pistone che stai cercando di costruire e` troppo grande"); 
+        return NULL; 
     } else if (x<0 || y-base/2<0 || x+base>800 || y>600) {
-        throw invalid_argument("Le coordinate non sono compatibili con l'immagine");
+        return NULL;
     } else {
 
-    // si crea un nuovo puntatore a struttura
-    Pistone* ret = new Pistone;
+        // si crea un nuovo puntatore a struttura
+        Pistone* ret = new Pistone;
 
-    // si assegnano i valori nella nuova struttura creata
-    ret->base       =   base;
-    ret->altezza    =   base/2;
-    ret->deltaS     =   base*0.15;
-    ret->deltaH     =   ret->altezza*0.3;
-    ret->pos.x      =   x;
-    ret->pos.y      =   y;
-    return ret;
+        // si assegnano i valori nella nuova struttura creata
+        ret->base       =   base;
+        ret->altezza    =   base/2;
+        ret->deltaS     =   base*0.15;
+        ret->deltaH     =   ret->altezza*0.3;
+        ret->pos.x      =   x;
+        ret->pos.y      =   y;
+        return ret;
 
     }     
 }
@@ -98,7 +98,7 @@ Pistone*  pist_new(string str){
     string new_str;
     new_str = str.substr(found, found2);
     
-    unsigned int a,b,c;
+    int a,b,c;
     /* attraverso il comando atoi trasformo la string contenente 
     *  il valore di x in un intero
     */
