@@ -12,9 +12,7 @@ Pistone* pist_init(int base, int x, int y){
         return NULL;
     } else if (base>300) {
         return NULL; 
-    } else if (x<0 || y-base/2<0 || x+base>800 || y>600) {
-        return NULL;
-    } else {
+    }else {
 
         // si crea un nuovo puntatore a struttura
         Pistone* ret = new Pistone;

@@ -13,8 +13,8 @@
  * 
 **/
 struct Posizione{
-    unsigned int x;
-    unsigned int y;
+    int x;
+    int y;
 };
 
 /** Struttura che rappresenta le dimensioni del pistone 
@@ -22,10 +22,10 @@ struct Posizione{
  *  
 **/
 struct Pistone {
-    unsigned int base;                 // lunghezza di base del pistone
-    unsigned int altezza;              // altezza del pistone
-    unsigned int deltaS;               // larghezza della scanalatura del pistone
-    unsigned int deltaH;               // altezza della scanalatura del pistone
+    int base;                 // lunghezza di base del pistone
+    int altezza;              // altezza del pistone
+    int deltaS;               // larghezza della scanalatura del pistone
+    int deltaH;               // altezza della scanalatura del pistone
     Posizione pos;                     // posizione del pistone nell'immagine
 };
 

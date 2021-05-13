@@ -22,10 +22,6 @@ fc_machine* fc_machine_init(int x, int y, int length,int q1, int base){
     }else{
         return NULL;
     }
-
-    
-
-    
 }
 
 void fc_delete_machine(fc_machine* machine){
@@ -43,7 +39,7 @@ string fc_machine_to_svg(fc_machine* machine){
     return mech;
 }
 
-int fc_set_origin(fc_machine* machine, string x, string y){
+int fc_machine_set_origin(fc_machine* machine, string x, string y){
     
     if(!is_number(x)|| !is_number(y)|| machine == NULL){
            return 1;
@@ -65,7 +61,7 @@ int fc_set_origin(fc_machine* machine, string x, string y){
        }
 }
 
-int fc_set_q1(fc_machine* machine, string q1){
+int fc_machine_set_q1(fc_machine* machine, string q1){
     if(!is_number(q1) || machine == NULL ){
            return 1;
        }
@@ -76,10 +72,42 @@ int fc_set_q1(fc_machine* machine, string q1){
            }
            machine ->scarart->q1 = new_q1;
            machine ->scaralt->q1 = -(180 - (-new_q1));
-           
            //updating also q12 and q22
            machine -> scarart ->q2 = (machine->scaralt->q1) - new_q1;
            machine -> scaralt -> q2 = -(machine->scarart->q2);
+           return 0;
+    }
+}
+
+int fc_machine_set_length(fc_machine* machine, string length){
+    if (fc_set_length(machine -> scarart, length)==1){
+        return 1;
+    }
+    else{
+        int new_length = stoi(length);
+        machine->scarart->length = new_length;
+        machine->scaralt->length = new_length;
+        return 0;
+    }
+}
+
+int fc_machine_set_base(fc_machine* machine, string base){
+    if(!is_number(base)){
+           return 1;
+       }
+       else{
+           int new_base = stoi(base);
+           if(new_base > 300 || new_base <= 0){
+               return 1;
+           }
+           machine ->pistone->base = new_base;
+           machine -> pistone->altezza = new_base/2;
+           machine -> pistone -> deltaS = new_base*0.15;
+           machine->pistone->deltaH = machine->pistone->altezza*0.3;
+           machine->pistone->pos.x = machine->pistone->pos.x - new_base/2;
+           machine ->scarart->origin.y = machine->scarart->origin.y - new_base/2;
+           machine -> scaralt ->origin.y = machine->scaralt->origin.y - new_base/2;
+           
            return 0;
     }
 }

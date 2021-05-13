@@ -51,7 +51,7 @@ string fc_machine_to_svg(fc_machine* machine);
  *  - 1 if constraints are violated nor number is given or if the pointer is NULL (no existing structure)
  *  - 0 if constraints are satisfied
 */
-int fc_set_origin(fc_machine* machine, string x, string y);
+int fc_machine_set_origin(fc_machine* machine, string x, string y);
 
 /**
  * Function to change q1 angle hence the height reached by the machine
@@ -61,7 +61,26 @@ int fc_set_origin(fc_machine* machine, string x, string y);
  *  - 1 if constraints are violated nor number is given or if the pointer is NULL (no existing structure)
  *  - 0 if constraints are satisfied
 */
-int fc_set_q1(fc_machine* machine, string q1);
+int fc_machine_set_q1(fc_machine* machine, string q1);
 
+/**
+ * Function to set new length for arms of the robots
+ * @param machine pointer of type fc_machine
+ * @param length string with new length value
+ * @return int value:
+ * - 1 if constraints are violated nor number is given 
+ * - 0 if constraints are satisfied
+*/
+int fc_machine_set_length(fc_machine* machine, string length);
+
+/**
+ * Function to set a new value for the base parameter of the piston
+ * @param machine pointer of type fc_machine
+ * @param base string with the new value for the base parameter
+ * @return int value:
+ * - 1 if constraints are violated nor number is given 
+ * - 0 if constraints are satisfied
+*/
+int fc_machine_set_base(fc_machine* machine, string base);
 
 #endif
