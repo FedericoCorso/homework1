@@ -110,5 +110,126 @@ int fc_machine_set_base(fc_machine* machine, string base){
            
            return 0;
     }
+
 }
 
+
+fc_machine* fc_svg_to_machine(string content){
+    
+    // si trova all'interno della stringa acquisita la parola p
+    string p = "polygon points=\"";     //16 caratteri
+    size_t found = content.find(p)+size(p);
+    size_t found2 = content.find(",",found);
+    // creo una nuova stringa contenente il valore di x
+    string new_str;
+    new_str = content.substr(found, found2);
+    
+    int a,b,c;
+    /* attraverso il comando atoi trasformo la string contenente 
+    *  il valore di x in un intero
+    */
+    a = atoi(new_str.c_str());
+
+    // creo una nuova stringa contenente il valore di y
+    found = content.find(" ",found2);
+    new_str = content.substr(found2+1, found);
+    
+    /* attraverso il comando atoi trasformo la string contenente 
+    *  il valore di y in un intero
+    */
+    b = atoi(new_str.c_str());
+    
+    // creo una nuova stringa contenente il secondo valore di x
+    found2 = content.find(",",found);
+    new_str = content.substr(found, found2);
+    
+    /* attraverso il comando atoi trasformo la string contenente 
+    *  il secondo valore di x in un intero
+    */
+    c = atoi(new_str.c_str()); 
+
+    // a cout to check the value of "base" parameter
+    int base = c-a;
+    cout << "base: " << base << endl;
+    // define the "y" parrameter
+    int y = b;
+    cout << "y coordinate: " << y << endl;
+
+    // leggo il file svg cercando info per il robot scara
+
+    // some auxiliary strings
+    string rotation = "= \"r";
+    string space = " ";
+    string svg_head = "<g";
+    size_t r = strlen("rotate(");
+    
+    //auxiliary string
+    string aux;
+
+    // parameters from transformation of the svg file
+    p = "= \""; // every instruction in the svg starts with this sequence of chars
+    found = content.find(svg_head); // skip declaration of svg file
+    size_t found1 = content.find(p,found); // find the first occurence in the file of string p startin from group definition <g
+    found2 = content.find("\"", found1+3); // find the first occurence of rotation directive
+    size_t found3 = content.find(" ", found1 +3); // find the first space starting from found1
+    
+    string check_str = content.substr(found1, 4);
+    
+    aux = content.substr(found1 +3, found2 - found1 - 3 ); // maybe this line could be deleted
+
+    // extracting q1
+    string aux1 = content.substr(found1 + 3 + r, found3 - found1 -3 -r);
+    int q12 = stoi(aux1);
+    cout <<"q12: " << q12 << endl;
+
+    // check on q1 angle value
+    int q1 = - (q12 + 180);
+    cout << "q1: " << q1 << endl; 
+
+    //extracting length
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux = content.substr(found1 +3, found2 - found1 - 3 );  
+    cout << "length: " << aux << endl;
+    int length = stoi(aux);
+
+    //extracting thickness
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux = content.substr(found1 +3, found2 - found1 - 3 );
+    // cout << "thickness: " << aux << endl;
+    // int thickness = stoi(aux);
+
+    //extracting q2
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux1 = content.substr(found1 + 3 + r, found3 - found1 -3 -r);
+    // int q2 = stoi(aux1);
+    // cout <<"q2: " <<q2 << endl;
+
+    //extracting frame x coordinate
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux = content.substr(found1 +3, found2 - found1 - 3 );
+    cout << "x_coordinate: " << aux << endl;
+    int xc = stoi(aux);
+
+    //extracting frame y coordinate
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux = content.substr(found1 +3, found2 - found1 - 3 );
+    //cout << "y_coordinate: " << aux << endl;
+    //int yc = stoi(aux);
+    
+    //extracting radius
+    found1 = content.find(p, found2);
+    found2 = content.find("\"", found1+3);
+    aux = content.substr(found1 +3, found2 - found1 - 3 );
+    // cout << "radius: " << aux << endl;
+    // int radius = stoi(aux);
+
+    //initializing a new struct
+    return fc_machine_init(xc,b,length,q1,base);
+
+   
+}

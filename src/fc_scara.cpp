@@ -281,7 +281,7 @@ string fc_scara_to_svg(fc_scara* scara){
     string p = "= \""; // every instruction in the svg starts with this sequence of chars
     size_t found = content.find(svg_head); // skip declaration of svg file
     size_t found1 = content.find(p,found); // find the first occurence in the file of string p startin from group definition <g
-    size_t found2 = content.find("\"", found1+3); // find the first occurence of rottion directive
+    size_t found2 = content.find("\"", found1+3); // find the first occurence of rotation directive
     size_t found3 = content.find(" ", found1 +3); // find the first space starting from found1
     
     string check_str = content.substr(found1, 4);

@@ -18,7 +18,7 @@ struct fc_machine{
 };
 
 /**
- * Function to initialize the machine
+ * Initialize the machine
  * @param x int, x-coordinate of the arms 
  * @param y int, y-coordinate of the arms
  * @param length int length of the arms
@@ -29,7 +29,7 @@ struct fc_machine{
 fc_machine* fc_machine_init(int x, int y, int length, int q1, int base);
 
 /**
- * Function to free dynamic memory allocated for the machine
+ * Free dynamic memory allocated for the machine
  * @param machine , pointer to an existing structure
  * @return void 
 */
@@ -43,7 +43,7 @@ void fc_delete_machine(fc_machine* machine);
 string fc_machine_to_svg(fc_machine* machine);
 
 /**
- * function to set coordinates of the origin of the paantograph
+ * Set coordinates of the origin of the paantograph
  * @param machine pointer to an existing structure
  * @param x string with x coordinate
  * @param y string with y coordinate
@@ -54,7 +54,7 @@ string fc_machine_to_svg(fc_machine* machine);
 int fc_machine_set_origin(fc_machine* machine, string x, string y);
 
 /**
- * Function to change q1 angle hence the height reached by the machine
+ * Change q1 angle hence the height reached by the machine
  * @param machine pointer to an existing structure
  * @param q1 string with the new q1 value
  * @return int value:
@@ -64,7 +64,7 @@ int fc_machine_set_origin(fc_machine* machine, string x, string y);
 int fc_machine_set_q1(fc_machine* machine, string q1);
 
 /**
- * Function to set new length for arms of the robots
+ * Set new length for arms of the robots
  * @param machine pointer of type fc_machine
  * @param length string with new length value
  * @return int value:
@@ -74,7 +74,7 @@ int fc_machine_set_q1(fc_machine* machine, string q1);
 int fc_machine_set_length(fc_machine* machine, string length);
 
 /**
- * Function to set a new value for the base parameter of the piston
+ * Set a new value for the base parameter of the piston
  * @param machine pointer of type fc_machine
  * @param base string with the new value for the base parameter
  * @return int value:
@@ -82,5 +82,12 @@ int fc_machine_set_length(fc_machine* machine, string length);
  * - 0 if constraints are satisfied
 */
 int fc_machine_set_base(fc_machine* machine, string base);
+
+/**
+ * Read from an svg file and extract parameters for a new machine
+ * @param content string with file content
+ * @return fc_machine* pointer to the new structure
+*/
+fc_machine* fc_svg_to_machine(string content);
 
 #endif

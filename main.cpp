@@ -271,6 +271,13 @@ int main() {
                 string s = fc_machine_to_svg(machine);
                 cout << s << endl;
 
+                cout << "prova estrazione dati da file" << endl;
+                machine = fc_svg_to_machine(s);
+
+                s = fc_machine_to_svg(machine);
+                cout << s << endl;
+
+
                 fc_delete_machine(machine);
                 break;
 
