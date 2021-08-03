@@ -233,3 +233,12 @@ fc_machine* fc_svg_to_machine(string content){
 
    
 }
+
+string fc_machine_save(fc_machine* machine){
+    string mach = fc_machine_to_svg(machine);
+    string s = fc_svg_scara_init(machine -> scaralt, mach);
+    
+    s.append("</svg>\n");
+    
+    return fc_save(s);
+}

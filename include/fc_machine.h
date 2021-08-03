@@ -90,4 +90,11 @@ int fc_machine_set_base(fc_machine* machine, string base);
 */
 fc_machine* fc_svg_to_machine(string content);
 
+/**
+ * Save on file the svg representation of a fc_machine structure
+ * @param machine fc_machine* pointer to an existing fc_scara struct
+ * @return string w\ the filename
+*/
+string fc_machine_save(fc_machine* machine);
+
 #endif

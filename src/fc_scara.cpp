@@ -108,7 +108,9 @@ fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x
     else if (q2 == 180 || q2 > 360){
         return  NULL;   
     }
-    else{
+    else if(2*length > x || 2 * length > y){
+        return NULL;
+    }else{
         /* 
         definition of a pointer to the struct scara 
         and initialization of a variable of type fc_scara with 
@@ -134,7 +136,7 @@ string fc_svg_scara_init(fc_scara* scara, string device){
     string s;
 
     s += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?> \n";
-    s += "<svg xmlns=\"http://www.w3.org/2000/svg\" width = \"" + to_string(scara -> svg_width + scara->origin.x) + "\" height = \"" + to_string(scara -> svg_width+scara->origin.y) + "\">\n";
+    s += "<svg xmlns=\"http://www.w3.org/2000/svg\" width = \"" + to_string(scara -> svg_width + (2 * scara->origin.x)) + "\" height = \"" + to_string(scara -> svg_width+ (2 * scara->origin.y)) + "\">\n";
     
     s += device;    
     return s;

@@ -17,7 +17,8 @@ int main() {
     char c; // choice parameter
     string s; // string to store the svg string of the structure or input from user
     string f; // string to store the name of the file or to store input from user
-    fc_scara* scara; // pointer to a structure
+    fc_scara* scara = NULL; // pointer to a structure
+    fc_machine* machine = NULL;
 
     // messages for the user
     cout << "Build your scara robot with this program!" << endl;
@@ -35,7 +36,8 @@ int main() {
         cout << "Type \"5\" to edit an existing structure" << endl;
         cout << "Type \"6\" to delete the created structure" << endl;
         cout << "Type \"7\" to create a machine" << endl;
-        cout << "Type \"8\" to end the execution  of the program" << endl;
+        cout << "Type \"8\" to save the machine in a file" << endl;
+        cout << "Type \"9\" to end the execution  of the program" << endl;
         cout << endl;
 
         // store the input 
@@ -246,6 +248,7 @@ int main() {
                     
             }
             case '7':{
+                // qui è necessario implementare una procedura che riconosca la violazione dei vincoli !!!
                 int x;
                 int y;
                 int length;
@@ -263,7 +266,7 @@ int main() {
                 cout << "base: " << endl;
                 cin >> base;
                 
-                fc_machine* machine = fc_machine_init(x,y,length,q1,base);
+                machine = fc_machine_init(x,y,length,q1,base);
 
                 cout << machine ->scarart << endl;
                 cout << machine -> scaralt << endl;
@@ -277,15 +280,31 @@ int main() {
                 s = fc_machine_to_svg(machine);
                 cout << s << endl;
 
-
-                fc_delete_machine(machine);
                 break;
 
             }
             case '8':{
+                cout << machine << endl;
+                if( machine != NULL){
+                    f = fc_machine_save(machine);
+
+                    cout << "machine created and saved to: " << f << " file" << endl;
+                    
+                    cout << endl;
+
+                    break;
+                }
+                else{
+                    cout << "Machine not defined. " << endl;
+                    cout << endl;
+                    break;
+                }
+            }
+            case '9':{
                 cout << "end of the program" << endl;
                 //delete memory if used
                 fc_delete_robot(scara);
+                fc_delete_machine(machine);
                 //exit while loop
                 ex = false;
 
