@@ -37,7 +37,8 @@ int main() {
         cout << "Type \"6\" to delete the created structure" << endl;
         cout << "Type \"7\" to create a machine" << endl;
         cout << "Type \"8\" to save the machine in a file" << endl;
-        cout << "Type \"9\" to end the execution  of the program" << endl;
+        cout << "Type \"9\" to create a machine from an existing svg file"<< endl;
+        cout << "Type \"e\" to end the execution  of the program" << endl;
         cout << endl;
 
         // store the input 
@@ -301,6 +302,31 @@ int main() {
                 }
             }
             case '9':{
+                
+                if(machine != NULL){
+                    cout << "Insert filename: ";
+                    cin >> f;
+                    cout << endl;
+                    
+                    machine = fc_machine_load(f);
+                    
+                    //show to the terminal the created structure
+                    s = fc_machine_to_svg(machine);
+                    cout << "the svg string is: \n \n" + s << endl;
+
+                    cout << endl;
+                    
+                    break;
+                }
+                else{
+                    cout << endl;
+                    cout << "Structure not defined. " << endl;
+                    cout << endl;
+                    break;
+                }
+
+            }
+            case 'e':{
                 cout << "end of the program" << endl;
                 //delete memory if used
                 fc_delete_robot(scara);

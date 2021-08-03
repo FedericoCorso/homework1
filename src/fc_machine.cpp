@@ -242,3 +242,11 @@ string fc_machine_save(fc_machine* machine){
     
     return fc_save(s);
 }
+
+fc_machine* fc_machine_load(string filename){
+    string content = fc_read_svg_device(filename);
+    
+    fc_machine* machine = fc_svg_to_machine(content);
+
+    return machine;
+}

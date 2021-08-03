@@ -97,4 +97,11 @@ fc_machine* fc_svg_to_machine(string content);
 */
 string fc_machine_save(fc_machine* machine);
 
+/**
+ * Loads an fc_machine structure from a file
+ * @param filename string with the name of the file
+ * @return fc_machine* pointer to loaded fc_machine struct 
+*/
+fc_machine* fc_machine_load(string filename);
+
 #endif
