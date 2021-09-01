@@ -50,11 +50,11 @@ int fc_set_frame();
 ````
 These functions can be used to modify each parameter according to constraints.
 
-### **`fc_delete_robot()`**
+### **`fc_delete_robot`**
 This function deletes the memory allocated in the heap by the `fc_scara_init` function. 
 
 ## **File handling functions**
-### **`fc_scara_to_svg()`**
+### **`fc_scara_to_svg`**
 This function converts a structure into an svg representation of the same.
 Give it as input a `fc_scara*` pointer and the function will return a string with the svg representation of the structure. 
 This function could be used to check the structure before saving it or doing other operations.
@@ -74,6 +74,65 @@ It takes as input the name of the file and it returns a pointer to the memory al
 ### **`fc_scara_save`**
 Use this function to save a structure to a new file or to overwrite an existing file.
 The function won't ask for confirmation before overwriting.
+
+## *Machine*
+This parto of the program will allow you to create a pantograph using the scara robot implemented above plus [Pistone]([FedericoCorso](https://github.com/FedericoCorso)) implemented by Luca Beber.
+
+![](build/machine.svg)
+
+### **Constraints**
+Constraints are those specified for the scara robot, plus those specified for "Pistone", here more information about the integrated device[README.md](https://github.com/FedericoCorso/compito_1/blob/main/README.md).
+
+## **Machine building functions**
+### **`fc_machine_init`**
+
+````
+fc_machine* fc_machine_init(int x, int y, int length, int q1, int base);
+````
+Use this function to build your first machine.
+#### **Function description**
+The function takes as input all the parameters which define the machine, if these don't follow the given constraints the function will return a `NULL` pointer.
+
+### **`fc_set_` functions**
+````
+int fc_machine_set_length();
+int fc_machine_set_q1();
+int fc_machine_set_origin();
+int fc_machine_set_base();
+````
+These functions can be used to modify each parameter according to constraints.
+
+### **`fc_delete_machine`**
+This function deletes the memory allocated in the heap by the `fc_machine_init` function. 
+
+### **`fc_are_equal`**
+this function allows the user to compare two machines. It returns true if those machines have same dimensions.
+
+## **File handling functions**
+### **`fc_machine_to_svg`**
+This function converts a structure into an svg representation of the same.
+Give it as input a `fc_machine*` pointer and the function will return a string with the svg representation of the structure. 
+This function could be used to check the structure before saving it or doing other operations.
+### **`fc_svg_to_machine`**
+This function read an svg file to extract data for a new structure.
+The function works if the svg follow a 'special' syntax.
+Significant parameters are inside svg instructions such as "rotate, translate, width, ...".
+Every instruction, which contains significant parameters, in the svg file created with `fc_machine_init` function start with this sequence of characters:
+* "`"= "`" : note that after the equal sign there's a blank space. This difference make it easier to find values for parameters.
+
+And end with this char:
+* "`"`" : because at the end of each command in svg you will find double quotes. 
+
+### **`fc_load_from_file`**
+Use this function to load a structure from an existing file.
+It takes as input the name of the file and it returns a pointer to the memory allocated for the structure.
+### **`fc_machine_save`**
+Use this function to save a structure to a new file or to overwrite an existing file.
+The function won't ask for confirmation before overwriting.
+
+
+
+
 ## **User interface programs**
 ### **Commandline program `main.cpp`**
 The `main.cpp`file contains a basic command line program which allows the user to create, load and save an svg file.
@@ -82,7 +141,7 @@ This functin will explicitly ask the user the values of the parameters given in 
 Use this function in the program to ask parameters to the user in a simple way
 
 ## Running the tests
-here write how to run tests and explain what these tests test and why
+Tests for both `fc_scara.cpp` and `fc_machine.cpp` have been implemented.
 
 ## Built With
 
