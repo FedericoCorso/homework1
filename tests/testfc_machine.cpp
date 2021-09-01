@@ -190,3 +190,17 @@ SCENARIO("The user want to change the base of the piston","[fc_machine_set_base]
         fc_delete_machine(machine);
     }
 }
+
+SCENARIO("The user creates 2 machines which are equal","[fc_are_equal()]"){
+    GIVEN("two initialized machine with same values"){
+        fc_machine* machine1 = fc_machine_init(150,300,100,-30, 40);
+        fc_machine* machine2 = fc_machine_init(150,300,100,-30, 40);
+        THEN("are_equal() should return true"){
+            REQUIRE( fc_are_equal(machine1, machine2)==true);
+        }
+        fc_delete_machine(machine1);
+        fc_delete_machine(machine2);
+    }
+    
+}
+

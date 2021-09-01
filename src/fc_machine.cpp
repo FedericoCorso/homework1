@@ -18,6 +18,7 @@ fc_machine* fc_machine_init(int x, int y, int length,int q1, int base){
     if(machine->pistone != NULL){
         machine->scarart = fc_scara_init(thickness, length, radius, q1, q21, x, y - machine->pistone->altezza);
         machine->scaralt = fc_scara_init(thickness, length, radius, q12,-q21, x, y - machine->pistone->altezza);
+        
         return machine;
     }else{
         return NULL;
@@ -30,8 +31,8 @@ void fc_delete_machine(fc_machine* machine){
 
 string fc_machine_to_svg(fc_machine* machine){
 
-    string rightarm = fc_scara_to_svg(machine->scarart);
-    string leftarm = fc_scara_to_svg(machine->scaralt);
+    string rightarm = fc_scara_to_svg(machine->scarart,false);
+    string leftarm = fc_scara_to_svg(machine->scaralt,false);
     string base = pist_svg(machine->pistone, false);
 
     string mech = base + leftarm + rightarm;
@@ -48,9 +49,9 @@ int fc_machine_set_origin(fc_machine* machine, string x, string y){
            int new_x = stoi(x);
            int new_y = stoi(y);
            //check both constraints for fc_scara_init & pist_init
-           if(new_x < 0 || new_y < 0 || new_y - (machine->pistone->base)/2<0 || new_x + (machine->pistone->base)>800 || new_y > 600){
-               return 1;
-           }
+           //if(new_x < 0 || new_y < 0 || new_y - (machine->pistone->base)/2<0 || new_x + (machine->pistone->base)>800){
+               //return 1;
+           //}
            machine -> pistone->pos.x = new_x;
            machine->pistone-> pos.y = new_y;
            machine ->scarart->origin.x = new_x;
@@ -62,7 +63,7 @@ int fc_machine_set_origin(fc_machine* machine, string x, string y){
 }
 
 int fc_machine_set_q1(fc_machine* machine, string q1){
-    if(!is_number(q1) || machine == NULL ){
+    if(/*!is_number(q1) ||*/ machine == NULL ){
            return 1;
        }
        else{
@@ -105,8 +106,8 @@ int fc_machine_set_base(fc_machine* machine, string base){
            machine -> pistone -> deltaS = new_base*0.15;
            machine->pistone->deltaH = machine->pistone->altezza*0.3;
            machine->pistone->pos.x = machine->pistone->pos.x - new_base/2;
-           machine ->scarart->origin.y = machine->scarart->origin.y - new_base/2;
-           machine -> scaralt ->origin.y = machine->scaralt->origin.y - new_base/2;
+           //machine ->scarart->origin.y = machine->scarart->origin.y - new_base/2;
+           //machine -> scaralt ->origin.y = machine->scaralt->origin.y - new_base/2;
            
            return 0;
     }
@@ -249,4 +250,23 @@ fc_machine* fc_machine_load(string filename){
     fc_machine* machine = fc_svg_to_machine(content);
 
     return machine;
+}
+
+
+bool fc_are_equal(fc_machine* machine1, fc_machine* machine2){
+    //machines are equal if they are initialised with same parameters
+    int base1 = machine1->pistone->base;
+    int base2 = machine2->pistone->base;
+    int length1 = machine1->scaralt->length;
+    int length2 = machine2->scaralt->length;
+    int x1=machine1->scaralt->origin.x;
+    int x2=machine2->scaralt->origin.x;
+    int y1=machine1->pistone->pos.y;
+    int y2=machine1->pistone->pos.y;
+
+    if(base1 == base2 && length1 == length2 && x1 == x2 && y1 == y2){
+        return true;
+    }else{
+        return false;
+    }
 }

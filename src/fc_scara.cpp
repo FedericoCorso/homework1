@@ -108,9 +108,10 @@ fc_scara* fc_scara_init (int thickness,int length,int radius,int q1,int q2,int x
     else if (q2 == 180 || q2 > 360){
         return  NULL;   
     }
-    else if(2*length > x || 2 * length > y){
-        return NULL;
-    }else{
+    //else if(2*length > x || 2 * length > y){
+        //return NULL;
+    //}
+    else{
         /* 
         definition of a pointer to the struct scara 
         and initialization of a variable of type fc_scara with 
@@ -142,9 +143,9 @@ string fc_svg_scara_init(fc_scara* scara, string device){
     return s;
 }
 
-string fc_scara_to_svg(fc_scara* scara){
-       
+string fc_scara_to_svg(fc_scara* scara, bool measures){
     string scara_svg;
+    if(measures == false){
     // creating a group of images
     scara_svg += "<g transform = \"rotate(" + to_string(scara->q1) + " " + to_string(scara->origin.x) + " " + to_string(scara->origin.y) + ") translate("+ to_string(scara->origin.x - scara->radius) + "," + to_string(scara->origin.y - (scara->thickness)/2)+")\" ";   
     // rectangle style
@@ -161,13 +162,42 @@ string fc_scara_to_svg(fc_scara* scara){
     scara_svg += "</g>\n";
     //first revolute joint
     scara_svg += "<circle cx= \"" + to_string(scara->origin.x) + "\" cy= \"" + to_string(scara->origin.y) + "\" r= \"" + to_string(scara->radius) + "\" stroke= \" black \" stroke-width=\"3\" fill=\" white \" /> \n";
-    
     /*
     //end svg
     scara_svg.append("</svg>\n");
     */
+    } else{
+        // creating a group of images
+        scara_svg += "<g transform = \"rotate(" + to_string(scara->q1) + " " + to_string(scara->origin.x) + " " + to_string(scara->origin.y) + ") translate("+ to_string(scara->origin.x - scara->radius) + "," + to_string(scara->origin.y - (scara->thickness)/2)+")\" ";   
+        // rectangle style
+        scara_svg += "style =\" fill:rgb(128,128,128);stroke-width:3;stroke:rgb(0,0,0)\">\n";
+        // drawing the first arm
+        scara_svg += "<rect width = \"" + to_string(scara->length) + "\" height = \"" + to_string(scara->thickness)+ "\" />\n";
+        scara_svg += "<line x1=\"0\" y1=\""+to_string(scara->thickness*2)+"\" x2=\""+to_string(scara->length)+"\" y2=\""+to_string(scara->thickness*2)+"\" style=\"stroke:rgb(0,0,0);stroke-width:1\" />\n";
+        scara_svg += "<text x=\""+to_string(scara->length/2)+"\" y=\""+to_string(scara->thickness*2 + 15)+"\" stroke-width=\"1\" fill=\"black\">"+to_string(scara->length)+"</text>\n";
+        //second arm
+        scara_svg += "<rect width =\"" + to_string(scara->length) + "\" height =\"" + to_string(scara->thickness)+ "\" ";
+        scara_svg += "transform = \"rotate(" + to_string(scara->q2)+ " " + to_string(scara->length - scara->radius) +" "+ to_string((scara->thickness)/2) + ") translate(" + to_string(scara->length  - 2* (scara->radius)) + "," + to_string(0)+ ")\"/>\n";
 
+        scara_svg += "<line x1=\""+to_string(0)+"\" y1=\""+to_string(scara->thickness*2)+"\" x2=\""+to_string(scara->length)+"\" y2=\""+to_string(scara->thickness*2)+"\" style=\"stroke:rgb(0,0,0);stroke-width:1\"";
+        scara_svg += " transform = \"rotate(" + to_string(scara->q2)+ " " + to_string(scara->length - scara->radius) +" "+ to_string((scara->thickness)/2) + ") translate(" + to_string(scara->length  - 2* (scara->radius)) + "," + to_string(0)+ ")\"/>\n";
+
+        scara_svg += "<text x=\""+to_string(scara->length/2)+"\" y=\""+to_string(scara->thickness*2 + 15)+"\" stroke-width=\"1\" fill=\"black\" stroke-width=\"1\"";
+        // translation to the position of the frame
+        scara_svg += " transform = \"rotate(" + to_string(scara->q2)+ " " + to_string(scara->length - scara->radius) +" "+ to_string((scara->thickness)/2) + ") translate(" + to_string(scara->length  - 2* (scara->radius)) + "," + to_string(0)+ ")\">";
+        scara_svg += to_string(scara->length)+"</text>\n";
+        // second revolute joint
+        scara_svg += "<circle cx=\"" + to_string(scara->length - scara->radius) + "\" cy=\"" + to_string((scara->thickness)/2) + "\" r=\"" + to_string(scara->radius) + "\" stroke=\" black \" stroke-width=\"3\" fill=\" white \" /> \n";
+        //end of the group
+        scara_svg += "</g>\n";
+        //first revolute joint
+        scara_svg += "<circle cx= \"" + to_string(scara->origin.x) + "\" cy= \"" + to_string(scara->origin.y) + "\" r= \"" + to_string(scara->radius) + "\" stroke= \" black \" stroke-width=\"3\" fill=\" white \" /> \n";
+        
+
+        
+    }
     return scara_svg;
+
    }
 
    int fc_set_thickness(fc_scara* robot, string thickness){
@@ -359,9 +389,9 @@ fc_scara* fc_load_from_file(string filename){
     return scara;
 }
 
-string fc_scara_save(fc_scara* scara){
+string fc_scara_save(fc_scara* scara,bool measures){
 
-    string device = fc_scara_to_svg(scara);
+    string device = fc_scara_to_svg(scara,measures);
     string s = fc_svg_scara_init(scara, device);
     
     s.append("</svg>\n");

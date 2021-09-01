@@ -104,4 +104,12 @@ string fc_machine_save(fc_machine* machine);
 */
 fc_machine* fc_machine_load(string filename);
 
+/**
+ * @param fc_machine* pointer to a machine
+ * @param fc_machine* pointer to another machine
+ * @return bool: true -> the two pointers contain same machine
+ *               false -> the two pointers are pointed to different machines 
+*/
+bool fc_are_equal(fc_machine* machine1, fc_machine* machine2);
+
 #endif

@@ -133,9 +133,10 @@ string fc_svg_scara_init(fc_scara* scara, string device);
 /**
  * Create a string following svg formatting style 
  * @param scara pointer to fc_scara structure to export
+ * @param measures bool to put measures in svg
  * @return string with svg representation
 */
-string fc_scara_to_svg(fc_scara* scara);
+string fc_scara_to_svg(fc_scara* scara,bool measures=false);
 
 /**
  * read a file and create an fc_scara structure
@@ -156,7 +157,7 @@ fc_scara* fc_load_from_file(string filename);
  * @param scara fc_scara* pointer to an existing fc_scara struct
  * @return string w\ the filename
 */
-string fc_scara_save(fc_scara* scara);
+string fc_scara_save(fc_scara* scara, bool measures = false);
 
 /**
  * Ask parameters to the user
